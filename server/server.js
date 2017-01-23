@@ -4,6 +4,14 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var path = require('path');
 
+// == CONTROLLER DEPENDENCIES
+
+var gameController = require('./games/gameController.js');
+var goalieController = require('./goalies/goalieController.js');
+var skaterController = require('./skaters/skaterController.js');
+var teamController = require('./teams/teamController.js');
+
+
 // == CREATE APP
 var app = express();
 
@@ -42,9 +50,12 @@ app.get('/api/games/:gameid');
 
 // Skaters
 
-app.get('/api/skaters');
+app.get('/api/skaters', function(req, res) {
+  res.send('HERE ARE THE SKATERS!');
+});
 
-app.post('/api/skaters');
+app.post('/api/skaters', function(req, res) {
+});
 
 app.get('/api/skaters/:skaterid');
 

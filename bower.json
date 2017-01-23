@@ -1,0 +1,30 @@
+{
+  "name": "hrsf53-mvp",
+  "description": "League management app",
+  "main": "server.js",
+  "authors": [
+    "James Briggs"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "leage",
+    "management",
+    "app",
+    "mvp",
+    "hr"
+  ],
+  "homepage": "https://github.com/jfbriggs/hrsf53-mvp",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-route": "^1.6.1"
+  }
+}
