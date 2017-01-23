@@ -18,10 +18,43 @@ var port = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use(express.static(path.join(__dirname + '/client')));
+app.use(express.static(__dirname + '/client'));
 
 
 // == ROUTES
+
+// Teams
+app.get('/api/teams', function(req, res) {
+  res.send('HERE ARE THE TEAMS!');
+});
+
+app.post('/api/teams');
+
+app.get('/api/teams/:teamid');
+
+// Games
+
+app.get('/api/games');
+
+app.post('/api/games');
+
+app.get('/api/games/:gameid');
+
+// Skaters
+
+app.get('/api/skaters');
+
+app.post('/api/skaters');
+
+app.get('/api/skaters/:skaterid');
+
+// Goalies
+
+app.get('/api/goalies');
+
+app.post('/api/goalies');
+
+app.get('/api/goalies/:goalieid');
 
 
 // == LISTEN TO PORT
