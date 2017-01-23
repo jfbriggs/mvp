@@ -1,0 +1,31 @@
+{
+  "name": "hrsf53-mvp",
+  "version": "1.0.0",
+  "description": "League management app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jfbriggs/hrsf53-mvp.git"
+  },
+  "keywords": [
+    "leage",
+    "management",
+    "app",
+    "mvp",
+    "hr"
+  ],
+  "author": "James Briggs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jfbriggs/hrsf53-mvp/issues"
+  },
+  "homepage": "https://github.com/jfbriggs/hrsf53-mvp#readme",
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.7"
+  }
+}
