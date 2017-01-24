@@ -11,7 +11,7 @@
     </tr>
     <tr ng-repeat='team in data.teams'>
       <td>{{team.division}}</td>
-      <td>{{team.name}}</td>
+      <td><a href="/#!/teamview/{{team.name}}">{{team.name}}</a></td>
       <td>{{team.gamesPlayed}}</td>
       <td>{{team.wins}}</td>
       <td>{{team.losses}}</td>
@@ -20,7 +20,11 @@
     </tr>
   </table>
 
-  <div class="add-form">Add Team
+  <div class="add-buttons">
+    <button id="add-team" ng-click="showTeamForm()">Add Team</button>
+  </div>
+
+  <div class="add-form team-form">Add Team
 
   <form ng-submit='addTeam()'>
       <p>Division</p>

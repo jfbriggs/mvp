@@ -50,9 +50,15 @@ td, th {
   padding: 8px;
 }
 
+.add-buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
 .add-form {
   text-align: center;
   margin-top: 30px;
+  display: none;
 }
 
 .add-form p {
@@ -61,4 +67,16 @@ td, th {
 
 .add-form input {
   display: inline;
+}
+
+.team-header {
+  text-align: center;
+}
+
+.team-header li {
+  display: inline-block;
+}
+
+.roster-skaters, .roster-goalies {
+  text-align: center;
 }

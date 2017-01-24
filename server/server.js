@@ -32,13 +32,13 @@ app.use(express.static(__dirname + '/../client'));
 // == ROUTES
 
 // Teams
+app.get('/api/teams/:teamid', teamController.oneTeam);
+
 app.get('/api/teams', teamController.allTeams);
 
 app.post('/api/teams', teamController.newTeam); 
 
-app.get('/api/teams/:teamid', function(req, res) {
 
-});
 
 // Games
 
@@ -52,30 +52,22 @@ app.get('/api/games/:gameid', function(req, res) {
 
 // Skaters
 
-app.get('/api/skaters', function(req, res) {
-  res.send('HERE ARE THE SKATERS!');
-});
+// app.get('/api/skaters', function(req, res) {});
 
 app.post('/api/skaters', function(req, res) {
 });
 
-app.get('/api/skaters/:skaterid', function(req, res) {
-
-});
+app.get('/api/skaters/:teamid', skaterController.getTeamSkaters);
 
 // Goalies
 
-app.get('/api/goalies', function(req, res) {
-
-});
+// app.get('/api/goalies', function(req, res) {});
 
 app.post('/api/goalies', function(req, res) {
 
 });
 
-app.get('/api/goalies/:goalieid', function(req, res) {
-
-});
+app.get('/api/goalies/:teamid', goalieController.getTeamGoalies);
 
 
 // == LISTEN TO PORT

@@ -33,6 +33,11 @@ angular.module('myleague.schedule', [])
 
     };
 
+    $scope.showGameForm = function() {
+      $('.game-form').toggle();
+      $('#add-game').toggle();
+    }
+
     init();
 
 });

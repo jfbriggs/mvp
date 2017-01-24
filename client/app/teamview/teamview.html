@@ -1,1 +1,115 @@
-<div>This is the team view page.</div>
+<div class="team-view">
+
+  <div class="team-header" ng-model="data.teamInfo">
+    <ul>
+      <li class="team-name"><h2>{{currentTeam}}</h2></li>
+      <li class="team-standings"><h2>({{data.teamInfo.division}}, {{data.teamInfo.wins}}-{{data.teamInfo.losses}}-{{data.teamInfo.ties}})</h2></li>
+    </ul>
+  </div>
+
+  <div class="roster-skaters">
+    <table>
+      <tr><td colspan="8">Skaters<td></tr>
+      <tr>
+        <th>Pos.</th>
+        <th>#</th>
+        <th>Name</th>
+        <th>Goals</th>
+        <th>Assists</th>
+        <th>Points</th>
+        <th>Shots</th>
+        <th>PIM</th>
+      </tr>
+      <tr ng-repeat='skater in data.skaters'>
+        <td>{{skater.position}}</td>
+        <td>{{skater.number}}</td>
+        <td>{{skater.name}}</td>
+        <td>{{skater.goals}}</td>
+        <td>{{skater.assists}}</td>
+        <td>{{skater.points}}</td>
+        <td>{{skater.shots}}</td>
+        <td>{{skater.penaltyMinutes}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="roster-goalies">
+    <table>
+      <tr><td colspan="8">Goalies</td></tr>
+      <tr>
+        <th>Pos.</th>
+        <th>#</th>
+        <th>Name</th>
+        <th>Wins</th>
+        <th>Losses</th>
+        <th>Ties</th>
+        <th>Save %</th>
+        <th>GAA</th>
+      </tr>
+      <tr ng-repeat='goalie in data.goalies'>
+        <td>G</td>
+        <td>{{goalie.number}}</td>
+        <td>{{goalie.name}}</td>
+        <td>{{goalie.wins}}</td>
+        <td>{{goalie.losses}}</td>
+        <td>{{goalie.ties}}</td>
+        <td>{{goalie.savePct}}</td>
+        <td>{{goalie.goalsAA}}</td>
+      </tr>
+    </table>
+  </div>
+  
+  <div class="add-buttons">
+    <button id="add-skater" ng-click="showSkaterForm()">Add Skater</button>
+    <button id="add-goalie" ng-click="showGoalieForm()">Add Goalie</button>
+  </div>
+
+  <div class="add-form skater-form">
+
+    <form ng-submit='addSkater()'>
+        <p>Name</p>
+        <input class='text' type='text' name='name' ng-model='newSkater.name'><br />
+        <p>Number</p>
+        <input class='text' type='text' name='number' ng-model='newSkater.number'><br />
+        <p>Position<p>
+        <input class='text' type='text' name='position' ng-model='newSkater.position'><br />
+        <p>Goals</p>
+        <input class='text' type='text' name='goals' ng-model='newSkater.goals'><br />
+        <p>Assists</p>
+        <input class='text' type='text' name='assists' ng-model='newSkater.assists'><br />
+        <p>Points</p>
+        <input class='text' type='text' name='points' ng-model='newSkater.points'><br />
+        <p>Shots</p>
+        <input class='text' type='text' name='shots' ng-model='newSkater.shots'><br />
+        <p>PIM</p>
+        <input class='text' type='text' name='penaltyMinutes' ng-model='newSkater.penaltyMinutes'><br />
+        <br />
+        <input type='submit' value='Add Skater'>
+      </form>
+
+  </div>
+
+  <div class="add-form goalie-form">
+
+    <form ng-submit='addGoalie()'>
+        <p>Name</p>
+        <input class='text' type='text' name='name' ng-model='newGoalie.name'><br />
+        <p>Number</p>
+        <input class='text' type='text' name='number' ng-model='newGoalie.number'><br />
+        <p>Wins</p>
+        <input class='text' type='text' name='wins' ng-model='newGoalie.wins'><br />
+        <p>Losses</p>
+        <input class='text' type='text' name='losses' ng-model='newGoalie.losses'><br />
+        <p>Ties</p>
+        <input class='text' type='text' name='ties' ng-model='newGoalie.ties'><br />
+        <p>Save %</p>
+        <input class='text' type='text' name='savePct' ng-model='newGoalie.savePct'><br />
+        <p>GAA</p>
+        <input class='text' type='text' name='goalsAA' ng-model='newGoalie.goalsAA'><br />
+        <br />
+        <input type='submit' value='Add Goalie'>
+      </form>
+
+  </div>
+
+</div>

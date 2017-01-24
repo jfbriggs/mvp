@@ -2,7 +2,6 @@ angular.module('myleague.overview', [])
 
 .controller('OverviewController', function ($scope, $location, $route, Teams) {
 
-    // Your code here
     $scope.data = { teams: [] };
 
     var init = function() {
@@ -33,6 +32,11 @@ angular.module('myleague.overview', [])
       });
 
       $scope.newTeam = {};
+    };
+
+    $scope.showTeamForm = function() {
+      $('.team-form').toggle();
+      $('#add-team').toggle();
     };
 
 

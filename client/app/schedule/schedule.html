@@ -10,13 +10,17 @@
     <tr ng-repeat='game in data.games'>
       <td>{{game.date}}</td>
       <td>{{game.time}}</td>
-      <td>{{game.homeTeam}}</td>
-      <td>{{game.visitingTeam}}</td>
+      <td><a href="/#!/teamview/{{game.homeTeam}}">{{game.homeTeam}}</a></td>
+      <td><a href="/#!/teamview/{{game.visitingTeam}}">{{game.visitingTeam}}</a></td>
       <td>{{game.outcome}}</td>
     </tr>
   </table>
 
-  <div class="add-form">Add Game
+  <div class="add-buttons">
+    <button id="add-game" ng-click="showGameForm()">Add Game</button>
+  </div>
+
+  <div class="add-form game-form">Add Game
 
   <form ng-submit='addGame()'>
       <p>Date</p>

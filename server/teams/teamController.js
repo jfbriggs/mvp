@@ -31,8 +31,19 @@ module.exports = {
     .fail(function(err) {
       next(error);
     });
-  }
+  },
 
+  oneTeam: function(req, res, next) {
+    var teamName = req.url.split("/")[3];
+    teamName = teamName.replace(/%20/i, ' ');
+    getAllTeam({'name': teamName})
+    .then(function(teamInfo) {
+      res.json(teamInfo);
+    })
+    .fail(function(err) {
+      next(err);
+    });
+  }
 
 
 // perhaps a delete team option?

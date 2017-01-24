@@ -14,7 +14,7 @@ angular.module('myleague', [
       templateUrl: 'app/schedule/schedule.html',
       controller: 'ScheduleController'
     })
-    .when('/teamview', {
+    .when('/teamview/:teamid', {
       templateUrl: 'app/teamview/teamview.html',
       controller: 'TeamViewController'
     })
@@ -36,6 +36,17 @@ angular.module('myleague', [
     });
   };
 
+  var getOne = function(team) {
+    return $http({
+      method: 'GET',
+      url: '/api/teams/' + team
+    })
+    .then(function(resp) {
+      console.log('Response data:', resp.data);
+      return resp.data;
+    });
+  }
+
   var addTeam = function(teamObj) {
     return $http({
       method: 'POST',
@@ -49,7 +60,8 @@ angular.module('myleague', [
 
   return {
     getAll: getAll,
-    addTeam: addTeam
+    addTeam: addTeam,
+    getOne: getOne
   };
 
 })
@@ -81,6 +93,64 @@ angular.module('myleague', [
     getAll: getAll,
     addGame: addGame
   };
+})
+.factory('Skaters', function($http) {
 
+  var getTeam = function(team) {
+    return $http({
+      method: 'GET',
+      url: '/api/skaters/' + team
+    })
+    .then(function(resp) {
+      return resp.data;
+      console.log('Retrieved skaters for URL:', '/api/goalies/' + team);
+    });
+  };
+
+  var addSkater = function(skater) {
+    return $http({
+      method: 'POST',
+      url: '/api/skaters',
+      data: skater
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
+  }
+
+  return {
+    getTeam: getTeam,
+    addSkater: addSkater
+  };
 
 })
+.factory('Goalies', function($http) {
+
+  var getTeam = function(team) {
+    return $http({
+      method: 'GET',
+      url: '/api/goalies/' + team
+    })
+    .then(function(resp) {
+      return resp.data;
+      console.log('Retrieved goalies for URL:', '/api/goalies/' + team);
+    });
+  };
+  
+  var addGoalie = function(goalie) {
+    return $http({
+      method: 'POST',
+      url: '/api/goalies',
+      data: goalie
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
+  }
+
+  return {
+    getTeam: getTeam,
+    addGoalie: addGoalie
+  };
+
+});
