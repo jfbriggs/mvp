@@ -13,6 +13,8 @@ angular.module('myleague.schedule', [])
             games.forEach(function(game) {
               game.date = game.date.slice(0, 10);
               $scope.data.games.push(game);
+
+              sortSchedule();
             });
           }
         });
@@ -36,8 +38,10 @@ angular.module('myleague.schedule', [])
 
       Games.addGame($scope.newGame).then(function(resp) {
         $scope.data.games = [];
+        $scope.data.teams = [];
         init();
         console.log(resp);
+        $scope.showGameForm();
       });
 
       $scope.newGame = {};
@@ -47,6 +51,25 @@ angular.module('myleague.schedule', [])
     $scope.showGameForm = function() {
       $('.game-form').toggle();
       $('#add-game').toggle();
+    }
+
+    var sortSchedule = function(scope) {
+      $scope.data.games.sort(function(a, b) { 
+        if (a.date < b.date) {
+          return -1;
+        } else if (a.date > b.date) {
+          return 1;
+        } else {
+          // sort by time
+          if (a.time < b.time) {
+            return -1;
+          } else if (a.time > b.time) {
+            return 1;
+          } else {
+            return 0;
+          }
+        }
+      });
     }
 
     init();
