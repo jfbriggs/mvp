@@ -18,6 +18,21 @@ angular.module('myleague.schedule', [])
         });
     };
 
+    $scope.newGame = {};
+
+    $scope.addGame = function() {
+      console.log('Game being added:', $scope.newGame);
+
+      Games.addGame($scope.newGame).then(function(resp) {
+        $scope.data.games = [];
+        init();
+        console.log(resp);
+      });
+
+      $scope.newGame = {};
+
+    };
+
     init();
 
 });

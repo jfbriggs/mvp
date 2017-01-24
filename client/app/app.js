@@ -36,8 +36,20 @@ angular.module('myleague', [
     });
   };
 
+  var addTeam = function(teamObj) {
+    return $http({
+      method: 'POST',
+      url: 'api/teams',
+      data: teamObj
+    })
+    .then(function(resp) {
+      return resp.data;
+    });
+  }
+
   return {
-    getAll: getAll
+    getAll: getAll,
+    addTeam: addTeam
   };
 
 })

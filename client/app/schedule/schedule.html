@@ -15,4 +15,23 @@
       <td>{{game.outcome}}</td>
     </tr>
   </table>
+
+  <div class="add-form">Add Game
+
+  <form ng-submit='addGame()'>
+      <p>Date</p>
+      <input class='text' type='text' name='date' ng-model='newGame.date' placeholder="YYYY-MM-DD"><br />
+      <p>Time</p>
+      <input class='text' type='text' name='time' ng-model='newGame.time' placeholder="Time"><br />
+      <p>Home Team<p>
+      <input class='text' type='text' name='homeTeam' ng-model='newGame.homeTeam' placeholder="Home Team"><br />
+      <p>Visiting Team</p>
+      <input class='text' type='text' name='vistingTeam' ng-model='newGame.visitingTeam' placeholder="Visiting Team"><br />
+      <p>Outcome</p>
+      <input class='text' type='text' name='outcome' ng-model='newGame.outcome' placeholder="Input TBD if not yet played..."><br />
+      <br />
+      <input type='submit' value='Add Game'>
+    </form>
+
+  </div>
 </div>

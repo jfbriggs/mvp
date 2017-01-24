@@ -8,7 +8,7 @@ var gameSchema = new mongoose.Schema ({
     unique: false
   },
 
-  vistingTeam: {
+  visitingTeam: {
     type: String,
     required: true,
     unique: false

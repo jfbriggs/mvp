@@ -19,4 +19,25 @@
       <td>{{team.points}}</td>
     </tr>
   </table>
+
+  <div class="add-form">Add Team
+
+  <form ng-submit='addTeam()'>
+      <p>Division</p>
+      <input class='text' type='text' name='division' ng-model='newTeam.division'><br />
+      <p>Name</p>
+      <input class='text' type='text' name='name' ng-model='newTeam.name'><br />
+      <p>Games Played<p>
+      <input class='text' type='text' name='gamesPlayed' ng-model='newTeam.gamesPlayed'><br />
+      <p>Wins</p>
+      <input class='text' type='text' name='wins' ng-model='newTeam.wins'><br />
+      <p>Losses</p>
+      <input class='text' type='text' name='losses' ng-model='newTeam.losses'><br />
+      <p>Ties</p>
+      <input class='text' type='text' name='ties' ng-model='newTeam.ties'><br />
+      <br />
+      <input type='submit' value='Add Team'>
+    </form>
+
+  </div>
 </div>

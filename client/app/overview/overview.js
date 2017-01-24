@@ -17,6 +17,25 @@ angular.module('myleague.overview', [])
         });
     };
 
+    $scope.newTeam = {};
+
+    $scope.addTeam = function() {
+      console.log('adding team!');
+
+      var points = +$scope.newTeam.wins * 2 + +$scope.newTeam.ties;
+      console.log('Points calculated', points);
+
+      $scope.newTeam.points = points;
+      Teams.addTeam($scope.newTeam).then(function(resp) {
+        $scope.data.teams = [];
+        init();
+        console.log(resp);
+      });
+
+      $scope.newTeam = {};
+    };
+
+
     init();
 
 

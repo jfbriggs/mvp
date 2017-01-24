@@ -34,9 +34,7 @@ app.use(express.static(__dirname + '/../client'));
 // Teams
 app.get('/api/teams', teamController.allTeams);
 
-app.post('/api/teams', function(req, res) {
-
-}); 
+app.post('/api/teams', teamController.newTeam); 
 
 app.get('/api/teams/:teamid', function(req, res) {
 
@@ -46,9 +44,7 @@ app.get('/api/teams/:teamid', function(req, res) {
 
 app.get('/api/games', gameController.allGames);
 
-app.post('/api/games', function(req, res) {
-
-});
+app.post('/api/games', gameController.newGame);
 
 app.get('/api/games/:gameid', function(req, res) {
 

@@ -11,6 +11,11 @@ header div {
   padding: 9px 0 0 15px;
 }
 
+span .login {
+  display: inline-block;
+  float: right;
+}
+
 a {
   text-decoration: none;
   color: #0f6bff;
@@ -43,4 +48,17 @@ table {
 
 td, th {
   padding: 8px;
+}
+
+.add-form {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.add-form p {
+  font-size: 12px;
+}
+
+.add-form input {
+  display: inline;
 }
