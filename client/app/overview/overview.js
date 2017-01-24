@@ -56,8 +56,6 @@ angular.module('myleague.overview', [])
 
       console.log(divisions);
 
-      var allTeams = [];
-
       for (division in divisions) {
         divisions[division].sort(function(a, b) {
           if (points(a) === points(b)) {
