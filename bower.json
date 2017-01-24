@@ -1,7 +1,6 @@
 {
   "name": "hrsf53-mvp",
   "description": "League management app",
-  "main": "server.js",
   "authors": [
     "James Briggs"
   ],

@@ -11,12 +11,18 @@ header div {
   padding: 9px 0 0 15px;
 }
 
+a {
+  text-decoration: none;
+  color: #0f6bff;
+}
+
 li {
   list-style: none;
 }
 
 .nav {
   text-align: center;
+  border-bottom: 2px solid #0f6bff;
 }
 
 .nav-menu{
@@ -29,4 +35,12 @@ li {
   padding-right: 20px;
   font-weight: bold;
   color: #0f6bff;
+}
+
+table {
+  margin: 50px auto 0 auto;
+}
+
+td, th {
+  padding: 8px;
 }

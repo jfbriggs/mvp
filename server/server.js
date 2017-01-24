@@ -19,34 +19,40 @@ var app = express();
 mongoose.connect('mongodb://localhost/myleague');
 
 // == DEFINE PORT
-var port = process.env.PORT || 3000;
+var port = 3000;
 
 // == MIDDLEWARE
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/client'));
+app.use(express.static(__dirname + '/../client'));
 
 
 // == ROUTES
 
 // Teams
-app.get('/api/teams', function(req, res) {
-  res.send('HERE ARE THE TEAMS!');
+app.get('/api/teams', teamController.allTeams);
+
+app.post('/api/teams', function(req, res) {
+
+}); 
+
+app.get('/api/teams/:teamid', function(req, res) {
+
 });
-
-app.post('/api/teams');
-
-app.get('/api/teams/:teamid');
 
 // Games
 
-app.get('/api/games');
+app.get('/api/games', gameController.allGames);
 
-app.post('/api/games');
+app.post('/api/games', function(req, res) {
 
-app.get('/api/games/:gameid');
+});
+
+app.get('/api/games/:gameid', function(req, res) {
+
+});
 
 // Skaters
 
@@ -57,15 +63,23 @@ app.get('/api/skaters', function(req, res) {
 app.post('/api/skaters', function(req, res) {
 });
 
-app.get('/api/skaters/:skaterid');
+app.get('/api/skaters/:skaterid', function(req, res) {
+
+});
 
 // Goalies
 
-app.get('/api/goalies');
+app.get('/api/goalies', function(req, res) {
 
-app.post('/api/goalies');
+});
 
-app.get('/api/goalies/:goalieid');
+app.post('/api/goalies', function(req, res) {
+
+});
+
+app.get('/api/goalies/:goalieid', function(req, res) {
+
+});
 
 
 // == LISTEN TO PORT

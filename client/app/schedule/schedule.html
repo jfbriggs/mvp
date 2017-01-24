@@ -1,0 +1,18 @@
+<div class="schedule">
+  <table>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Home Team</th>
+      <th>Away Team</th>
+      <th>Outcome</th>
+    </tr>
+    <tr ng-repeat='game in data.games'>
+      <td>{{game.date}}</td>
+      <td>{{game.time}}</td>
+      <td>{{game.homeTeam}}</td>
+      <td>{{game.visitingTeam}}</td>
+      <td>{{game.outcome}}</td>
+    </tr>
+  </table>
+</div>
