@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app='myleague'>
+<head>
+  <meta charset="utf-8"' />
+  <title>MyLeague - Recreational League Management</title>
+  <link rel="stylesheet" type="text/css" href="styles/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div>MyLeague</div>
+  </header>
+
+  <!-- NAV BAR -->
+  <div class="nav">
+    <ul class="nav-menu">
+      <li>League Overview</li>
+      <li>Teams</li>
+      <li>League Leaders</li>
+    </ul>
+  </div>
+
+  <div ng-view></div>
+
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+
+  <script src="app/app.js"></script>
+  <script src="app/overview/overview.js"></script>
+  <script src="app/schedule/schedule.js"></script>
+  <script src="app/teamview/teamview.js"></script>
+
+</body>
+
+</html>

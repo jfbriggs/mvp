@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var goalieScheme = new mongoose.Schema({
+var goalieSchema = new mongoose.Schema({
 
   name: {
     type: String,
@@ -63,3 +63,5 @@ var goalieScheme = new mongoose.Schema({
   }
 
 });
+
+module.exports = mongoose.model('Goalie', goalieSchema);

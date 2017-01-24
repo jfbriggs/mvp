@@ -63,3 +63,5 @@ var skaterSchema = new mongoose.Schema({
   }
 
 });
+
+module.exports = mongoose.model('Skater', skaterSchema);
