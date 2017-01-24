@@ -1,11 +1,11 @@
 angular.module('myleague.schedule', [])
 
-.controller('ScheduleController', function ($scope, $route, $location, Games) {
+.controller('ScheduleController', function ($scope, $route, $location, Games, Teams) {
 
-   $scope.data = { games: [] };
+   $scope.data = { games: [], teams: [] };
 
     var init = function() {
-      console.log('Games!');
+
       Games.getAll()
         .then(function(games) {
           console.log('Game collection:', games);
@@ -16,6 +16,17 @@ angular.module('myleague.schedule', [])
             });
           }
         });
+
+      Teams.getAll()
+        .then(function(teams) {
+          console.log('Team collection:', teams);
+          if (teams) {
+            teams.forEach(function(team) {
+              $scope.data.teams.push(team);
+            });
+          }
+        });
+
     };
 
     $scope.newGame = {};

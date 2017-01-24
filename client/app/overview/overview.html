@@ -29,11 +29,9 @@
 
   <form ng-submit='addTeam()'>
       <p>Division</p>
-      <input class='text' type='text' name='division' ng-model='newTeam.division'><br />
+      <input class='text' type='text' name='division' ng-model='newTeam.division' required><br />
       <p>Name</p>
-      <input class='text' type='text' name='name' ng-model='newTeam.name'><br />
-      <p>Games Played<p>
-      <input class='text' type='text' name='gamesPlayed' ng-model='newTeam.gamesPlayed'><br />
+      <input class='text' type='text' name='name' ng-model='newTeam.name' required><br />
       <p>Wins</p>
       <input class='text' type='text' name='wins' ng-model='newTeam.wins'><br />
       <p>Losses</p>

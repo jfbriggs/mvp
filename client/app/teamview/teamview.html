@@ -14,11 +14,11 @@
         <th>Pos.</th>
         <th>#</th>
         <th>Name</th>
-        <th>Goals</th>
-        <th>Assists</th>
-        <th>Points</th>
-        <th>Shots</th>
-        <th>PIM</th>
+        <th ng-click="sortSkatersBy('goals')">Goals</th>
+        <th ng-click="sortSkatersBy('assists')">Assists</th>
+        <th ng-click="sortSkatersBy('points')">Points</th>
+        <th ng-click="sortSkatersBy('shots')">Shots</th>
+        <th ng-click="sortSkatersBy('penaltyMinutes')">PIM</th>
       </tr>
       <tr ng-repeat='skater in data.skaters'>
         <td>{{skater.position}}</td>
@@ -68,11 +68,11 @@
 
     <form ng-submit='addSkater()'>
         <p>Name</p>
-        <input class='text' type='text' name='name' ng-model='newSkater.name'><br />
+        <input class='text' type='text' name='name' ng-model='newSkater.name' required><br />
         <p>Number</p>
-        <input class='text' type='text' name='number' ng-model='newSkater.number'><br />
+        <input class='text' type='text' name='number' ng-model='newSkater.number' required><br />
         <p>Position<p>
-        <input class='text' type='text' name='position' ng-model='newSkater.position'><br />
+        <input class='text' type='text' name='position' ng-model='newSkater.position' required><br />
         <p>Goals</p>
         <input class='text' type='text' name='goals' ng-model='newSkater.goals'><br />
         <p>Assists</p>

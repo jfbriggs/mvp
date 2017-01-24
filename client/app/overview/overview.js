@@ -23,6 +23,8 @@ angular.module('myleague.overview', [])
       console.log('Points calculated', points);
 
       $scope.newTeam.points = points;
+      $scope.newTeam.gamesPlayed = $scope.newTeam.wins + $scope.newTeam.losses + $scope.newTeam.ties;
+      
       Teams.addTeam($scope.newTeam).then(function(resp) {
         $scope.data.teams = [];
         init();

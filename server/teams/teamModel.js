@@ -16,31 +16,29 @@ var teamSchema = new mongoose.Schema({
   wins: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   losses: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   ties: {
     type: Number,
     required: true,
-    unique: false
-  },
-
-  gamesPlayed: {
-    type: Number,
-    required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   points: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   logo: {

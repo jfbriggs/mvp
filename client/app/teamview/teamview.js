@@ -37,6 +37,10 @@ angular.module('myleague.teamview', [])
           $scope.data.teamInfo = teamData[0];
         }
       });
+
+    $scope.sortSkatersBy('points');
+
+    $scope.sortGoaliesBy('gamesPlayed');
   }
 
   $scope.showSkaterForm = function() {
@@ -49,6 +53,18 @@ angular.module('myleague.teamview', [])
     $('.goalie-form').toggle();
     $('#add-goalie').toggle();
     $('#add-skater').toggle();
+  }
+
+  $scope.sortSkatersBy = function(attribute) {
+    $scope.data.skaters.sort(function(a, b) {
+      return b[attribute] - a[attribute];
+    });
+  }
+
+  $scope.sortGoaliesBy = function(attribute) {
+    $scope.data.goalies.sort(function(a, b) {
+      return b[attribute] - a[attribute];
+    });
   }
 
   init();

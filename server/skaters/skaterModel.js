@@ -29,25 +29,29 @@ var skaterSchema = new mongoose.Schema({
   goals: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   assists: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   penaltyMinutes: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   shots: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   bio: {

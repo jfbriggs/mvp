@@ -23,31 +23,36 @@ var goalieSchema = new mongoose.Schema({
   wins: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   losses: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   ties: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0
   },
 
   savePct: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: .000
   },
 
   goalsAA: {
     type: Number,
     required: true,
-    unique: false
+    unique: false,
+    default: 0.00
   },
 
   bio: {
