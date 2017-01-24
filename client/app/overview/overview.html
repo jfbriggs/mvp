@@ -1,5 +1,6 @@
 <div>
-  <table>
+  <table ng-repeat="division in data.teams">
+    <tr colspan="7"><h3>{{division}}</h3></tr>
     <tr>
       <th>Division</th>
       <th>Team</th>
@@ -9,7 +10,7 @@
       <th>T</th>
       <th>Points</th>
     </tr>
-    <tr ng-repeat='team in data.teams'>
+    <tr ng-repeat='team in division'>
       <td>{{team.division}}</td>
       <td><a href="/#!/teamview/{{team.name}}">{{team.name}}</a></td>
       <td>{{team.gamesPlayed}}</td>

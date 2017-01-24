@@ -2,16 +2,14 @@ angular.module('myleague.overview', [])
 
 .controller('OverviewController', function ($scope, $location, $route, Teams) {
 
-    $scope.data = { teams: [] };
+    $scope.data = { teams: {} };
 
     var init = function() {
       Teams.getAll()
         .then(function(teams) {
           console.log('Team collection:', teams);
           if (teams) {
-            teams.forEach(function(team) {
-              $scope.data.teams.push(team);
-            });
+            $scope.data.teams = sortByDivision(teams);
           }
         });
     };
@@ -40,7 +38,39 @@ angular.module('myleague.overview', [])
     };
 
 
-    init();
 
+    var sortByDivision = function(teams) {
+      var divisions = {};
+
+      teams.forEach(function(team) {
+        if (divisions[team.division]) {
+          divisions[team.division].push(team);
+        } else {
+          divisions[team.division] = [team];
+        }
+      });
+
+      var points = function(wins, ties) {
+        return wins + wins + ties;
+      };
+
+      console.log(divisions);
+
+      var allTeams = [];
+
+      for (division in divisions) {
+        divisions[division].sort(function(a, b) {
+          if (points(a) === points(b)) {
+            return 0;
+          }
+          return points(a) < points(b) ? -1 : 1;
+        });
+      }
+
+      console.log(divisions);
+      return divisions;
+    };
+
+    init();
 
 });
