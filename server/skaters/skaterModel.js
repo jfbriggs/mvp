@@ -56,13 +56,11 @@ var skaterSchema = new mongoose.Schema({
 
   bio: {
     type: String,
-    required: true,
     unique: false
   },
 
   picture: {
     type: String,
-    required: false,
     unique: false
   }
 

@@ -18,7 +18,8 @@ module.exports = {
       next();
     })
     .fail(function(err) {
-      next(error);
+      console.log(err);
+      next(err);
     });
   },
 

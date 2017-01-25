@@ -14,11 +14,11 @@
         <th>Pos.</th>
         <th>#</th>
         <th>Name</th>
-        <th ng-click="sortSkatersBy('goals')">Goals</th>
-        <th ng-click="sortSkatersBy('assists')">Assists</th>
-        <th ng-click="sortSkatersBy('points')">Points</th>
-        <th ng-click="sortSkatersBy('shots')">Shots</th>
-        <th ng-click="sortSkatersBy('penaltyMinutes')">PIM</th>
+        <th class="sortable" ng-click="sortSkatersBy('goals')">Goals</th>
+        <th class="sortable" ng-click="sortSkatersBy('assists')">Assists</th>
+        <th class="sortable" ng-click="sortSkatersBy('points')">Points</th>
+        <th class="sortable" ng-click="sortSkatersBy('shots')">Shots</th>
+        <th class="sortable" ng-click="sortSkatersBy('penaltyMinutes')">PIM</th>
       </tr>
       <tr ng-repeat='skater in data.skaters'>
         <td>{{skater.position}}</td>
@@ -77,8 +77,6 @@
         <input class='text' type='text' name='goals' ng-model='newSkater.goals'><br />
         <p>Assists</p>
         <input class='text' type='text' name='assists' ng-model='newSkater.assists'><br />
-        <p>Points</p>
-        <input class='text' type='text' name='points' ng-model='newSkater.points'><br />
         <p>Shots</p>
         <input class='text' type='text' name='shots' ng-model='newSkater.shots'><br />
         <p>PIM</p>

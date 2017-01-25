@@ -46,26 +46,25 @@ app.get('/api/games', gameController.allGames);
 
 app.post('/api/games', gameController.newGame);
 
-app.get('/api/games/:gameid', function(req, res) {
+// app.get('/api/games/:gameid', function(req, res) {});
 
-});
+
 
 // Skaters
 
 // app.get('/api/skaters', function(req, res) {});
 
-app.post('/api/skaters', function(req, res) {
-});
+app.post('/api/skaters', skaterController.newSkater);
 
 app.get('/api/skaters/:teamid', skaterController.getTeamSkaters);
+
+
 
 // Goalies
 
 // app.get('/api/goalies', function(req, res) {});
 
-app.post('/api/goalies', function(req, res) {
-
-});
+app.post('/api/goalies', goalieController.newGoalie);
 
 app.get('/api/goalies/:teamid', goalieController.getTeamGoalies);
 

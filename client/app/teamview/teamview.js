@@ -43,6 +43,34 @@ angular.module('myleague.teamview', [])
     $scope.sortGoaliesBy('gamesPlayed');
   }
 
+  $scope.newSkater = {};
+  $scope.addSkater = function() {
+    $scope.newSkater.team = $scope.currentTeam;
+    Skaters.addSkater($scope.newSkater).then(function(resp) {
+      $scope.data.skaters = [];
+      $scope.data.goalies = [];
+      init();
+      console.log(resp);
+      $scope.showSkaterForm();
+    });
+
+      $scope.newSkater = {};
+  };
+
+  $scope.newGoalie = {};
+  $scope.addGoalie = function() {
+    $scope.newGoalie.team = $scope.currentTeam;
+    Goalies.addGoalie($scope.newGoalie).then(function(resp) {
+      $scope.data.skaters = [];
+      $scope.data.goalies = [];
+      init();
+      console.log(resp);
+      $scope.showGoalieForm();
+    });
+
+      $scope.newGoalie = {};
+  };
+
   $scope.showSkaterForm = function() {
     $('#add-skater').toggle();
     $('#add-goalie').toggle();

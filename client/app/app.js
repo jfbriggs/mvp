@@ -108,13 +108,15 @@ angular.module('myleague', [
   };
 
   var addSkater = function(skater) {
+    console.log('submitting skater!', skater);
     return $http({
       method: 'POST',
-      url: '/api/skaters',
+      url: '/api/skaters/',
       data: skater
     })
     .then(function(resp) {
       return resp.data;
+      console.log('Submitted skater!');
     });
   }
 
@@ -140,7 +142,7 @@ angular.module('myleague', [
   var addGoalie = function(goalie) {
     return $http({
       method: 'POST',
-      url: '/api/goalies',
+      url: '/api/goalies/',
       data: goalie
     })
     .then(function(resp) {
