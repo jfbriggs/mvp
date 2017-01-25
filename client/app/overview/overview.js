@@ -61,22 +61,15 @@ angular.module('myleague.overview', [])
         }
       });
 
-      var points = function(wins, ties) {
-        return wins + wins + ties;
-      };
-
-      console.log(divisions);
-
       for (division in divisions) {
         divisions[division].sort(function(a, b) {
-          if (points(a) === points(b)) {
+          if (a.points === b.points) {
             return 0;
           }
-          return points(a) < points(b) ? -1 : 1;
+          return b.points < a.points ? -1 : 1;
         });
       }
 
-      console.log(divisions);
       return divisions;
     };
 
